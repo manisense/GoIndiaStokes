@@ -1,5 +1,10 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Header from '../components/header'
+import Chart from '../components/chart'
+import FeatComps from '../components/featComps'
+import Main from '@/components/main'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,8 +19,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en ">
+      <body className={inter.className}>
+        <div className="overflow-x-hidden">
+        <Header />
+        <Chart />
+        <FeatComps />
+        </div>
+
+        {children}
+      </body>
     </html>
   )
 }
